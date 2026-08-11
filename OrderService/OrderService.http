@@ -1,6 +1,6 @@
 @OrderService_HostAddress = http://localhost:5058
 
-GET {{OrderService_HostAddress}}/weatherforecast/
+GET {{OrderService_HostAddress}}/api/Orders/1
 Accept: application/json
 
 ###
