@@ -25,9 +25,10 @@ public class OrdersController : ControllerBase
         }
     ];
 
+
     public OrdersController(IHttpClientFactory httpClientFactory)
     {
-        _httpClient = httpClientFactory.CreateClient();
+        _httpClient = httpClientFactory.CreateClient("ProductService");
     }
 
     [HttpGet]
@@ -44,8 +45,7 @@ public class OrdersController : ControllerBase
         if (order is null)
             return NotFound();
 
-        var response = await _httpClient.GetAsync(
-            $"https://localhost:7274/api/products/{order.ProductId}");
+        var response = await _httpClient.GetAsync($"/api/products/{order.ProductId}");
 
         if (!response.IsSuccessStatusCode)
         {
