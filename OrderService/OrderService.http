@@ -1,6 +1,6 @@
 @OrderService_HostAddress = http://localhost:8082
 
-GET {{OrderService_HostAddress}}/api/Orders
+GET {{OrderService_HostAddress}}/api/Orders/1
 Accept: application/json
 
 ###
